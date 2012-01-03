@@ -22,11 +22,10 @@ public class TopMenuLinksPanel extends Composite {
 
         links.getElement().setId("TopMenuLinks");
         
-        sourceCodeLink.setHref("http://code.google.com/p/gwtfb/source/browse/#svn/trunk/GwtFB/src/com/gwtfb/sdk");
+        sourceCodeLink.setHref("https://github.com/olams/GwtFB/");
         sourceCodeLink.setTarget("blank");
         
         leftSide.add ( new Hyperlink ( "Home" , "home" ) );
-        leftSide.add ( new Anchor("Forum", true, "http://www.facebook.com/apps/application.php?id=37309251911&sk=app_2373072738"));
         leftSide.add( sourceCodeLink );
         
     

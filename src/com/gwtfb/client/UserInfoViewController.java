@@ -94,7 +94,8 @@ public class UserInfoViewController extends Composite {
 
 	    outer.add ( welcomeHtml );
 		outer.add ( new HTML ( "<p/>" ) );
-        outer.add ( new HTML ( "<hr/><fb:comments xid='gwtfb' />" ) );
+		outer.add( new HTML ( "<h1>Like GwtFB on facebook</h1><div class='fb-like' data-href='http://www.facebook.com/apps/application.php?id=37309251911&amp;sk=page_getting_started' data-send='false' data-width='450' data-show-faces='false'></div>"));
+//        outer.add ( new HTML ( "<hr/><fb:comments css='http://www.gwtfb.com/GwtFB.css?123' xid='gwtfb' />" ) );
 	
 		
 		fbCore.api ( "/me" , new MeCallback () );

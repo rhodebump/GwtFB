@@ -33,16 +33,15 @@ public class GwtFB implements EntryPoint, ValueChangeHandler<String>  {
 
     
 	/**
-	 * Localhost 8888
+	 * 
+	 *  CHANGE APPID TO WHATEVER APP YOU ARE USING
 	 */
-     //public String APPID = "1d81c942b38e2e6b3fc35a147d371ab3";
-	
+    // This is the appid for www.gwtfb.com so it WON'T work for you.
+    public String APPID = "37309251911";
 
-    /**
-     * www.gwtfb.com
-     */
-   public String APPID = "0d51db8fd8b95ef0c2337ccbdc00d736";
-	
+	 // If you are developing on localhost port 8888 , this one should work
+   // public String APPID = "219605264787363";
+
 	private DockPanel mainPanel = new DockPanel ();
 	private SimplePanel mainView = new SimplePanel ();
 	private SimplePanel sideBarView = new SimplePanel ();
@@ -67,7 +66,7 @@ public class GwtFB implements EntryPoint, ValueChangeHandler<String>  {
 		root.getElement().setId ( "TheApp" );
 		mainView.getElement().setId("MainView");
 		sideBarView.getElement().setId("SideBarView");
-		mainPanel.add( new TopMenuPanel () , DockPanel.NORTH );
+		mainPanel.add( new TopMenuPanel (fbCore) , DockPanel.NORTH );
 		mainPanel.add ( new TopMenuLinksPanel (), DockPanel.NORTH );
 		mainPanel.add( sideBarView, DockPanel.WEST );
 		mainPanel.add( mainView, DockPanel.CENTER );
@@ -187,7 +186,7 @@ public class GwtFB implements EntryPoint, ValueChangeHandler<String>  {
 	private void renderHomeView () {
 	    sideBarView.clear();
 	    
-        if ( fbCore.getSession() == null ) {
+        if ( fbCore.getAuthResponse() == null ) {
             renderWhenNotLoggedIn ();
         } else {
             sideBarView.setWidget( new HomeSideBarPanel () );

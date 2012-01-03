@@ -48,10 +48,17 @@ public abstract class JSOModel extends JavaScriptObject {
         return eval('(' + jsonString + ')');
     }-*/;
 
+    /**
+     * Check if the object has key
+     */
     public final native boolean hasKey(String key) /*-{
         return this[key] != undefined;
     }-*/;
 
+    
+    /**
+     * Get keys
+     */
     public final native JsArrayString keys() /*-{
         var a = new Array();
         for (var p in this) { a.push(p); }
@@ -68,34 +75,58 @@ public abstract class JSOModel extends JavaScriptObject {
         return set;
     }
 
+    /**
+     * Get string value
+     */
     public final native String get(String key) /*-{
         return "" + this[key];
     }-*/;
 
+    /**
+     * Get string with default value
+     */
     public final native String get(String key, String defaultValue) /*-{
         return this[key] ? ("" + this[key]) : defaultValue;
     }-*/;
 
+    /**
+     * Set value
+     */
     public final native void set(String key, String value) /*-{
         this[key] = value;
     }-*/;
-    
+
+    /**
+     * Set int value
+     */
     public final native void set(String key, int value ) /*-{
     	this[key] = value;
     }-*/;
 
+    /**
+     * Get int value
+     */
     public final int getInt(String key) {
         return Integer.parseInt(get(key));
     }
 
+    /**
+     * Get boolean value
+     */
     public final boolean getBoolean(String key) {
         return Boolean.parseBoolean(get(key));
     }
 
+    /**
+     * Get object
+     */
     public final native JSOModel getObject(String key) /*-{
     	return (this[key] == null) ? null : this[key];
 	}-*/; 
 
+    /**
+     * Get array
+     */
     public final native JsArray<JSOModel> getArray(String key) /*-{
         return this[key] ? this[key] : new Array();
     }-*/;

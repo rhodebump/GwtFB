@@ -86,8 +86,8 @@ public class FBCore {
 	/**
 	 * Wrapper method
 	 */
-	public native JavaScriptObject getSession () /*-{
-		return $wnd.FB.getSession();
+	public native JavaScriptObject getAuthResponse () /*-{
+		return $wnd.FB.getAuthResponse();
 	}-*/;
 
 	/**
