@@ -114,6 +114,7 @@ public class FBCore {
 	 * Wrapper method
 	 */
 	public native void logout (AsyncCallback<JavaScriptObject> callback) /*-{
+		var app=this;
 		$wnd.FB.logout(function(response){
     	    app.@com.gwtfb.sdk.FBCore::callbackSuccess(Lcom/google/gwt/user/client/rpc/AsyncCallback;Lcom/google/gwt/core/client/JavaScriptObject;)(callback,response);
 		});
