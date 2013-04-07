@@ -8,9 +8,10 @@ import com.google.gwt.resources.client.ImageResource;
  * @author ola
  */
 public interface AppImageBundle extends ClientBundle {
-    
-    @Source ( "logo.png" )
-    ImageResource logo ();
+
+    //this is nice for example, but not for library
+//    @Source ( "logo.png" )
+//    ImageResource logo ();
     
 
 }

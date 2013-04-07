@@ -22,10 +22,10 @@ public class TopMenuPanel extends Composite {
 	private HorizontalPanel outer = new HorizontalPanel ();
 	
 	public TopMenuPanel (final FBCore fbCore) {
-	    AppImageBundle images = GWT.create( AppImageBundle.class);
+	    //AppImageBundle images = GWT.create( AppImageBundle.class);
 	    
 		outer.getElement().setId("TopMenu");
-		outer.add ( new Image ( images.logo() ) );
+		//outer.add ( new Image ( images.logo() ) );
         outer.add ( new HTML ( "<div style='margin-top: 2px; float: right;'><div class='fb-login-button' autologoutlink='true' scope='publish_stream,read_stream' /> </div>" ) );
     
         

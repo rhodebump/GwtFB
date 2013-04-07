@@ -2,6 +2,7 @@ package com.gwtfb.sdk;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.gwtfb.client.overlay.AuthResponse;
 
 /**
  * Class that wraps facebook Javascript SDK
@@ -86,9 +87,13 @@ public class FBCore {
 	/**
 	 * Wrapper method
 	 */
-	public native JavaScriptObject getAuthResponse () /*-{
+	public native AuthResponse getAuthResponse () /*-{
 		return $wnd.FB.getAuthResponse();
 	}-*/;
+
+
+   // var token = response.authResponse.accessToken;
+
 
 	/**
 	 * Wrapper method
